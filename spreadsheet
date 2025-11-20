@@ -1,0 +1,61 @@
+Experiment No.: 15
+Date: 22/10/2025
+
+Title:
+Program to Read and Write Data from a Spreadsheet using Python
+
+AIM:
+To develop a Python program to read the data from a spreadsheet and write the data into a spreadsheet using the openpyxl
+module.
+
+Algorithm:
+1. Start the program.
+2. Import the module openpyxl for spreadsheet operations.
+3. To write data:
+o Create a new workbook using openpyxl.Workbook().
+o Select the active sheet and write data into the cells.
+o Save the workbook with a desired filename.
+4. To read data:
+o Open the saved workbook using openpyxl.load_workbook().
+o Access the active sheet.
+o Read and display the cell data using a loop.
+5. Stop the program.
+
+Python Program (Source Code):
+# Program to Read and Write data from a Spreadsheet using openpyxl
+import openpyxl
+# Writing Data
+# Create a new workbook
+wb = openpyxl.Workbook()
+sheet = wb.active
+sheet.title = "EmployeeData"
+# Write data into cells
+sheet['A1'] = "Name"
+sheet['B1'] = "Department"
+sheet['C1'] = "Salary"
+sheet.append(["sasi", "HR", 30000])
+sheet.append(["ravi", "IT", 40000])
+sheet.append(["anil", "Finance", 35000])
+# Save the workbook
+wb.save("employee_data.xlsx")
+print("Data written successfully to 'employee_data.xlsx'.")
+
+# Load the existing workbook
+wb2 = openpyxl.load_workbook("employee_data.xlsx")
+sheet2 = wb2.active
+print("\nReading data from 'employee_data.xlsx':")
+for row in sheet2.iter_rows(values_only=True):
+print(row)
+
+Output:
+Data written successfully to 'employee_data.xlsx'.
+
+Reading data from 'employee_data.xlsx':
+('Name', 'Department', 'Salary')
+('sasi', 'HR', 30000)
+('ravi', 'IT', 40000)
+('anil', 'Finance', 35000)
+
+Result:
+Thus, the Python program to read and write data from a spreadsheet using the openpyxl module was successfully written,
+executed, and verified.
