@@ -1,0 +1,69 @@
+Experiment No: 13
+Date: 15/10/2025
+
+Title:
+Program to store and update Employee Details using Class in Python
+
+AIM:
+To develop a Python program by creating a class called Employee to store the details of employees and implement a
+method to update the salary of employees belonging to a given department.
+
+Algorithm:
+1. Start the program.
+2. Create a class Employee with attributes:
+o name, emp_id, department, salary
+3. Define a method display() to show employee details.
+4. Define another method update_salary(dept, increment) to increase the salary of all employees in the given
+department.
+5. Create a list of employee objects.
+6. Display employee details before and after updating the salary.
+7. Stop the program.
+
+Python Program (Source Code):
+# Program to store and update Employee Details using Class
+class Employee:
+def init (self, name, emp_id, department, salary):
+self.name = name
+self.emp_id = emp_id
+self.department = department
+self.salary = salary
+def display(self):
+print(f"Name: {self.name}, ID: {self.emp_id}, Department: {self.department}, Salary: {self.salary}")
+def update_salary(self, department, increment):
+if self.department == department:
+self.salary += increment
+# Create list of employee objects
+employees = [
+Employee("kamakshi", 101, "HR", 30000),
+Employee("kadambari", 102, "IT", 40000),
+Employee("srikari", 103, "IT", 45000),
+Employee("vishalakshi", 104, "Finance", 35000)
+]
+print("Before Salary Update:")
+for emp in employees:
+emp.display()
+# Update salary of IT department employees
+dept_name = "IT"
+increment_amt = 5000
+for emp in employees:
+emp.update_salary(dept_name, increment_amt)
+print("\nAfter Salary Update:")
+for emp in employees:
+emp.display()
+
+Output:
+Before Salary Update:
+Name: kamakshi, ID: 101, Department: HR, Salary: 30000
+Name: kadambari, ID: 102, Department: IT, Salary: 40000
+Name: srikari, ID: 103, Department: IT, Salary: 45000
+Name: vishalakshi, ID: 104, Department: Finance, Salary: 35000
+
+After Salary Update:
+Name: kamakshi, ID: 101, Department: HR, Salary: 30000
+Name: kadambari, ID: 102, Department: IT, Salary: 45000
+Name: srikari, ID: 103, Department: IT, Salary: 50000
+Name: vishalakshi, ID: 104, Department: Finance, Salary: 35000
+
+Result:
+Thus, the Python program to store employee details and update salary of employees belonging to a given department was
+successfully written, executed, and verified.
