@@ -1,0 +1,50 @@
+Experiment No.: 03
+Date: 10/09/2025
+
+Title:
+Fibonacci Sequence using Function
+
+AIM:
+To write a Python program that accepts a value for N (where N > 0) as input and passes this value to a function that
+generates the Fibonacci sequence up to N terms. The program should display a suitable error message if the input condition
+is not followed.
+
+Algorithm:
+1. Start the program.
+2. Input a value for N from the user.
+3. Check if N > 0.
+• If not, display an error message and stop the program.
+4. Define a function fibonacci(n) that:
+• Initializes the first two terms as 0 and 1.
+• Uses a loop to generate the Fibonacci sequence up to n terms.
+• Prints each term of the sequence.
+5. Call the function fibonacci(n) with the user input as an argument.
+6. Stop the program.
+
+
+Python Program (Source Code):
+# Program to generate Fibonacci sequence using a function
+# Function definition
+def fibonacci(n):
+ a, b = 0, 1
+ print("Fibonacci Sequence:")
+ for i in range(n):
+   print(a, end=" ")
+   a, b = b, a + b
+# Step 1: Input from user
+n = int(input("Enter the number of terms (N > 0): "))
+# Step 2: Check the condition for valid input
+if n <= 0:
+ print("Error: Please enter a positive integer greater than 0.")
+else:
+ fibonacci(n)
+
+Output:
+Enter the number of terms(N>0):12
+Fibonacci sequence:
+0 1 1 2 3 5 8 13 21 34 55 89
+
+Result:
+Thus, the Python program that accepts a value for N (where N > 0) and generates the Fibonacci sequence using a function
+was successfully written, executed, and verified. The program also correctly displays an appropriate error message when an
+invalid (non-positive) input is entered.
