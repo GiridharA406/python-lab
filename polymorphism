@@ -1,0 +1,66 @@
+Experiment No: 14
+Date: 22/10/2025
+
+Title:
+Program using Polymorphism and Inheritance to check whether a given input is a Palindrome (for both String and Integer)
+
+AIM:
+To develop a Python program using the concept of polymorphism and inheritance to check whether the given input (string
+or integer) is a palindrome or not.
+
+Algorithm:
+1. Start the program.
+2. Create a base class PalindromeChecker with a method is_palindrome().
+3. Create two derived classes:
+o StringPalindrome for string inputs.
+o NumberPalindrome for integer inputs.
+4. Override the is_palindrome() method in both derived classes to implement their own logic.
+5. Create objects of both classes and call their methods to check if the given input is a palindrome.
+6. Display the result.
+7. Stop the program.
+
+Python Program (Source Code):
+# Program using Polymorphism and Inheritance to check Palindrome for String and Integer
+# Base class
+class PalindromeChecker:
+def is_palindrome(self, value):
+pass # To be overridden by derived classes
+
+# Derived class for String Palindrome
+class StringPalindrome(PalindromeChecker):
+def is_palindrome(self, value):
+value = value.lower()
+return value == value[::-1]
+
+# Derived class for Number Palindrome
+class NumberPalindrome(PalindromeChecker):
+def is_palindrome(self, value):
+value = str(value)
+return value == value[::-1]
+
+# Create objects for both classes
+str_checker = StringPalindrome()
+num_checker = NumberPalindrome()
+# Input from user
+string_input = input("Enter a string: ")
+num_input = int(input("Enter an integer: "))
+# Check for palindrome
+if str_checker.is_palindrome(string_input):
+print(f"'{string_input}' is a palindrome string.")
+else:
+print(f"'{string_input}' is not a palindrome string.")
+if num_checker.is_palindrome(num_input):
+
+print(f"{num_input} is a palindrome number.")
+else:
+print(f"{num_input} is not a palindrome number.")
+
+Output:
+Enter a string: madam
+Enter an integer: 1357531
+'madam' is a palindrome string.
+1357531 is a palindrome number.
+
+Result:
+Thus, the Python program using polymorphism and inheritance to check whether a given string or integer is a palindrome
+was successfully written, executed, and verified.
