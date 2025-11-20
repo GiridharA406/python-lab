@@ -1,0 +1,48 @@
+Experiment No: 16
+Date:29/10/2025
+
+Title:
+Merge Selected Pages from Multiple PDFs to a New PDF
+
+AIM:
+To write a Python program that combines selected pages from multiple PDF files into a new single PDF using a suitable
+Python module.
+
+Algorithm:
+1. Start the program.
+2. Import the PyPDF2 module.
+3. Create a PdfWriter() object for the output PDF.
+4. Accept PDF filenames from the user (or define them in code).
+5. Open each PDF file using PdfReader().
+6. Select and add specific pages from each PDF to the writer object.
+7. Write the combined pages into a new PDF file using PdfWriter.write().
+8. Close all files.
+9. Stop the program.
+
+Python Program (Source Code):
+# Program to merge selected pages from multiple PDFs into a new PDF
+from PyPDF2 import PdfReader, PdfWriter
+# Step 1: Create a PdfWriter object
+writer = PdfWriter()
+# Step 2: List of input PDF files
+pdf_files = ["file1.pdf", "file2.pdf"]
+# Step 3: Loop through each PDF file
+for pdf in pdf_files:
+reader = PdfReader(pdf)
+print(f"{pdf} has {len(reader.pages)} pages.")
+# Step 4: Select specific pages (example: first 2 pages)
+for page_num in range(min(2, len(reader.pages))):
+writer.add_page(reader.pages[page_num])
+# Step 5: Write to output file
+with open("merged_selected_pages.pdf", "wb") as output:
+writer.write(output)
+print(" Selected pages merged successfully into merged_selected_pages.pdf")
+
+Output:
+file1.pdf has 1 pages.
+file2.pdf has 1 pages.
+Selected pages merged successfully into merged_selected_pages.pdf.
+
+Result:
+Thus, the Python program that merges selected pages from multiple PDF files into a new PDF was successfully written,
+executed, and verified.
