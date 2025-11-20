@@ -1,0 +1,52 @@
+Experiment No.: 04
+Date:17/09/2025
+
+Title:
+Binary to Decimal & Octal to Hexadecimal Conversion
+
+AIM:
+To develop a Python program to convert a binary number to its decimal equivalent and an octal number to its hexadecimal
+equivalent using functions.
+
+Algorithm:
+1. Start the program.
+2. Define a function binary_to_decimal(binary) to:
+• Convert the binary string to a decimal integer using int(binary, 2).
+• Return the decimal value.
+3. Define another function octal_to_hexadecimal(octal) to:
+• Convert the octal string to a decimal integer using int(octal, 8).
+• Convert the decimal value to hexadecimal using hex().
+• Return the hexadecimal value.
+4. Input a binary number and an octal number from the user.
+5. Call both functions and display the converted values.
+6. Stop the program.
+
+Python Program (Source Code):
+# Program to convert binary to decimal
+# and octal to hexadecimal using functions
+# Function to convert binary to decimal
+def binary_to_decimal(binary):
+  return int(binary, 2)
+# Function to convert octal to hexadecimal
+def octal_to_hexadecimal(octal):
+  decimal_value = int(octal, 8)
+  return hex(decimal_value)
+# Input from user
+binary_num = input("Enter a binary number: ")
+octal_num = input("Enter an octal number: ")
+# Conversions
+decimal_result = binary_to_decimal(binary_num)
+hex_result = octal_to_hexadecimal(octal_num)
+# Display results
+print("Binary to Decimal Conversion:", decimal_result)
+print("Octal to Hexadecimal Conversion:", hex_result)
+
+Output:
+Enter a binary number:1010
+Enter an octal number:6735
+Binary to decimal conversion :10
+Octal to hexadecimal conversion: 0xddd
+
+Result:
+Thus, the Python program to convert binary to decimal and octal to hexadecimal using functions was successfully written,
+executed, and verified.
