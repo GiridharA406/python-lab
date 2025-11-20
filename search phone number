@@ -1,0 +1,66 @@
+Experiment No.: 09
+Date: 8/10/2025
+
+Title:
+Search Phone Number & Email in a File
+
+AIM:
+To develop a Python program that searches the text in a file for phone numbers (e.g., +919900889977) and email addresses
+(e.g., sample@gmail.com) using regular expressions.
+
+Algorithm:
+1. Start the program.
+2. Import the re module for regular expressions.
+3. Accept a file name from the user.
+4. Open the file in read mode and read its content.
+5. Define two regular expression patterns:
+o For phone numbers: \+91\d{10}
+o For email addresses: [\w\.-]+@[\w\.-]+
+6. Use re.findall() to find all matches in the text.
+7. Display the found phone numbers and email addresses.
+8. Close the file.
+9. Stop the program.
+
+Python Program (Source Code):
+# Program to search phone numbers and email addresses in a file
+import re
+# Step 1: Accept file name from user
+filename = input("Enter the file name: ")
+try:
+# Step 2: Open and read file content with open(filename, 'r') as file:
+content = file.read()
+# Step 3: Define regex patterns
+phone_pattern = r'\+91\d{10}'
+email_pattern = r'[\w\.-]+@[\w\.-]+'
+# Step 4: Search for matches
+phones = re.findall(phone_pattern, content)
+emails = re.findall(email_pattern, content)
+# Step 5: Display results
+print("\nPhone Numbers Found:")
+if phones:
+for p in phones:
+print(p)
+else:
+print("No phone numbers found.")
+print("\nEmail Addresses Found:")
+if emails:
+for e in emails:
+print(e)
+else:
+print("No email addresses found.")
+
+except FileNotFoundError:
+print("Error: File not found. Please check the file name and try again.")
+
+Output:
+Enter the file name:sample.text
+phone number found:
++91900889977
++918888776655
+Email addresses found:
+sample@gmail.com
+info@college.edu.
+
+Result:
+Thus, the Python program that searches the text in a file for phone numbers and email addresses using regular expressions
+was successfully written, executed, and verified.
