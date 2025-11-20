@@ -1,0 +1,52 @@
+Experiment No.: 17
+Date:29/10/2025
+
+Title:
+Fetch Weather Data from the JSON File
+
+AIM:
+To write a Python program to fetch and display the current weather data from a JSON file.
+
+Algorithm:
+1. Start the program.
+2. Import the json module.
+3. Open and read the JSON file containing weather data.
+4. Load the JSON data using json.load().
+5. Extract weather details like city name, temperature, humidity, and description.
+6. Display the extracted information.
+7. Stop the program.
+
+Python Program (Source Code):
+# Program to fetch weather data from a JSON file
+import json
+# Step 1: Open and load the JSON file
+with open("weather.json", "r") as file:
+data = json.load(file)
+# Step 2: Extract required weather information
+city = data["city"]
+temperature = data["temperature"]
+humidity = data["humidity"]
+description = data["description"]
+# Step 3: Display the data
+print("----- Current Weather Report------")
+print("City:", city)
+print("Temperature:", temperature, "°C")
+print("Humidity:", humidity, "%")
+print("Weather Description:", description)
+Sample JSON File (weather.json):
+{
+"city": "Hyderabad", "temperature": 30,
+"humidity": 65,
+"description": "Partly cloudy"
+}
+
+Output:
+----- Current Weather Report -----
+City: chennai
+Temperature: 30 °C
+Humidity: 65 %
+Weather Description: Partly cloudy
+
+Result:
+Thus, the Python program to fetch current weather data from a JSON file was successfully written, executed, and
+verified.
