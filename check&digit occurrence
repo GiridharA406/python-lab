@@ -1,0 +1,54 @@
+Experiment No: 02
+Date:10/09/2025
+
+Title:
+Palindrome Check & Digit Occurrence Count
+
+AIM:
+To develop a Python program to check whether a given number is a palindrome or not and also count the number of
+occurrences of each digit in the input number.
+
+Algorithm:
+1. Start the program.
+2. Input a number from the user.
+3. Store the original number for comparison.
+4. Reverse the number using string slicing.
+5. Compare the original number and the reversed number.
+6. If both are the same, display that the number is a palindrome; otherwise, it is not.
+7. Initialize an empty dictionary to count digit occurrences.
+8. Use a loop to count each digit in the number.
+9. Display the digit and its count.
+10. Stop the program.
+
+
+Python Program (Source Code):
+# Program to check whether a number is palindrome
+# and count the occurrence of each digit
+# Step 1: Input number from user
+num = input("Enter a number: ")
+# Step 2: Check for palindrome
+if num == num[::-1]:
+ print("The number is a palindrome.")
+else:
+ print("The number is not a palindrome.")
+# Step 3: Count occurrences of each digit
+digit_count = {}
+for digit in num:
+ digit_count[digit] = digit_count.get(digit, 0) + 1
+# Step 4: Display digit occurrences
+print("Digit occurrences:")
+for digit, count in digit_count.items():
+ print(digit, ":", count)
+
+Output:
+Enter a  number:1345431
+The number is a palindrome 
+Digit occurrences:
+1:2
+3:2
+4:2
+5:1
+
+Result:
+Thus, the Python program to check whether a number is palindrome or not and count the number of occurrences of each
+digit was successfully written, executed, and verified.
