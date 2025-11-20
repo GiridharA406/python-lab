@@ -1,0 +1,71 @@
+Experiment No: 08
+Date: 24/09/2025
+
+Title:
+Check Phone Number — Recognize a pattern 415-555-4242 with and without Regular Expression
+
+AIM:
+To write a Python program to check whether a given string matches the pattern 415-555-4242 using:
+1. A user-defined function (without regular expressions).
+2. Using regular expressions.
+
+Algorithm:
+Without Regular Expression:
+1. Start the program.
+2. Define a function isPhoneNumber() that takes a string as input.
+3. Check whether the string has exactly 12 characters.
+4. Verify that characters at index 3 and 7 are '-'.
+5. Ensure all other characters are digits.
+6. If all conditions are satisfied, return True; else False.
+With Regular Expression:
+1. Import the re module.
+2. Define a pattern for phone numbers as \d{3}-\d{3}-\d{4}.
+3. Use re.fullmatch() to check if the input matches the pattern.
+4. Return whether the match is found or not.
+5. Stop the program.
+
+Python Program (Source Code):
+# Program to check phone number pattern with and without regular expression
+# Without Regular Expression
+def isPhoneNumber(number):
+ if len(number) != 12:
+  return False
+for i in range(len(number)):
+  if i == 3 or i == 7:
+   if number[i] != '-':
+    return False
+elif not number[i].isdigit():
+  return False
+return True
+# With Regular Expression
+import re
+def isPhoneNumberRegex(number):
+ pattern = r'^\d{3}-\d{3}-\d{4}$'
+ if re.fullmatch(pattern, number):
+  return True
+else:
+  return False
+# Main Program
+num = input("Enter phone number (format: 415-555-4242): ")
+print("\n--- Without Regular Expression ---")
+if isPhoneNumber(num):
+  print("Valid Phone Number Format")
+else:
+  print("Invalid Phone Number Format")
+
+print("\n--- With Regular Expression ---")
+if isPhoneNumberRegex(num):
+ print("Valid Phone Number Format")
+else:
+ print("Invalid Phone Number Format")
+
+Output:
+Enter phone number (format:415-555-4242):415-531-569
+---without regular expression---
+Invalid phone number format
+---with regular expression---
+Invalid phone number format
+
+Result:
+Thus, the Python program to recognize a phone number pattern using both normal functions and regular expressions was
+successfully written, executed, and verified
