@@ -1,0 +1,58 @@
+Experiment No: 10
+Date:8/10/2025
+
+Title:
+File Operations — Display First N Lines & Find Word Frequency
+
+AIM:
+To develop a Python program that accepts a file name from the user and performs the following operations:
+1. Displays the first N lines of the file.
+2. Finds the frequency of occurrence of a word accepted from the user in the file.
+
+Algorithm:
+1. Start the program.
+2. Accept the file name from the user.
+3. Open the file in read mode.
+4. Accept the number N (lines to display) from the user.
+5. Read the first N lines and display them.
+6. Accept a word from the user.
+7. Count how many times that word occurs in the file using the count() function.
+8. Display the frequency of the given word.
+9. Close the file.
+10. Stop the program.
+
+Python Program (Source Code):
+# Program to perform file operations:
+# 1. Display the first N lines of a file
+# 2. Find the frequency of a given word in the file
+filename = input("Enter the file name: ")
+try:
+# Step 1: Open the file in read mode
+with open(filename, 'r') as file:
+lines = file.readlines()
+# Step 2: Display the first N lines
+n = int(input("Enter the number of lines to display: "))
+print(f"\nFirst {n} lines of the file:")
+for i in range(min(n, len(lines))):
+print(lines[i], end='')
+# Step 3: Find frequency of a word
+word = input("\n\nEnter the word to find its frequency: ")
+with open(filename, 'r') as file:
+content = file.read()
+freq = content.count(word)
+print(f"\nThe word '{word}' occurs {freq} times in the file.")
+except FileNotFoundError:
+print("Error: File not found. Please check the file name and try again.")
+
+Output:
+Enter the file name:sample.txt
+Enter the number of lines to display:2
+First 2 lines of the file:
+Hardwork is the on;y way to success
+regret is painful than hardwork
+Enter the word to find its frequency:is
+The word'is' occurs 2 timmes in the file.
+
+Result:
+Thus, the Python program that displays the first N lines of a file and finds the frequency of a given word was successfully
+written, executed, and verified.
