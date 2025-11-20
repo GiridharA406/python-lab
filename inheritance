@@ -1,0 +1,65 @@
+Experiment No: 12
+Date:15/10/2025
+
+Title:
+Program using Inheritance to find the Area of Triangle, Circle and Rectangle
+
+AIM:
+To develop a Python program using the concept of inheritance to calculate the area of a triangle, circle, and rectangle.
+
+Algorithm:
+1. Start the program.
+2. Create a base class Shape with a method area() to be overridden.
+3. Create derived classes:
+o Rectangle → area = length × breadth
+o Triangle → area = 0.5 × base × height
+o Circle → area = π × radius2
+4. Initialize each class with respective parameters.
+5. Create objects for each class and call their area() methods.
+6. Display the calculated areas.
+7. Stop the program.
+
+Python Program (Source Code):
+# Program to find area of Triangle, Circle and Rectangle using Inheritance
+import math
+# Base class
+class Shape:
+def area(self):
+pass
+# Derived class for Rectangle
+class Rectangle(Shape):
+def init (self, length, breadth):
+self.length = length
+self.breadth = breadth
+def area(self):
+return self.length * self.breadth
+# Derived class for Triangle
+class Triangle(Shape):
+def init (self, base, height):
+self.base = base
+self.height = height
+def area(self):
+return 0.5 * self.base * self.height
+# Derived class for Circle
+class Circle(Shape):
+def init (self, radius):
+self.radius = radius
+def area(self):
+return math.pi * self.radius ** 2
+# Create objects and display areas
+rect = Rectangle(10, 5)
+
+tri = Triangle(8, 6)
+cir = Circle(7)
+print("Area of Rectangle:", rect.area())
+print("Area of Triangle:", tri.area())
+print("Area of Circle:", round(cir.area(), 2))
+
+Output:
+Area of rectangle:50
+Area of triangle:24.0
+Area of circle:153.94
+
+Result:
+Thus, the Python program to find the area of triangle, circle, and rectangle using inheritance was successfully written,
+executed, and verified.
