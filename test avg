@@ -1,0 +1,44 @@
+Experiment No.: 01
+Date: 10/09/2025
+Title:
+Calculation of Test Average — Finding the Best of Two Test Averages out of Three Test Marks
+AIM:
+To write a Python program to find the best of two test average marks out of three test marks entered by the user.
+Algorithm:
+1. Start the program.
+2. Input three test marks: test1, test2, and test3.
+3. Calculate the sum of all possible pairs:
+o (test1 + test2)
+o (test2 + test3)
+o (test1 + test3)
+4. Divide each sum by 2 to find the average of each pair.
+5. Find the maximum average among the three.
+6. Display the best average.
+7. Stop the program.
+
+Python Program (Source Code):
+# Program to find the best of two test average marks out of three test marks
+# Step 1: Input three test marks
+test1 = float(input("Enter Test 1 marks: "))
+test2 = float(input("Enter Test 2 marks: "))
+test3 = float(input("Enter Test 3 marks: "))
+# Step 2: Calculate all possible averages
+avg1 = (test1 + test2) / 2
+avg2 = (test2 + test3) / 2
+avg3 = (test1 + test3) / 2
+# Step 3: Find the best (maximum) average
+best_avg = max(avg1, avg2, avg3)
+# Step 4: Display the result
+print("Best of two test average marks =", best_avg)
+
+
+Output:
+Enter first internal marks:97
+Enter second internal marks:98
+Enter third internal marks:91
+Best of two test average marks =97.5
+
+
+Result:
+Thus, the Python program that accepts three test marks and finds the best of two test average marks was successfully
+written, executed, and verified.
