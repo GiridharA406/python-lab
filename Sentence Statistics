@@ -1,0 +1,55 @@
+Experiment No.: 05
+Date:17/09/2025
+
+Title:
+Sentence Statistics
+
+AIM:
+To write a Python program that accepts a sentence and finds the number of words, digits, uppercase letters, and lowercase
+letters.
+
+Algorithm:
+1. Start the program.
+2. Input a sentence from the user.
+3. Initialize counters for words, digits, uppercase letters, and lowercase letters.
+4. Use a loop to iterate through each character in the sentence.
+• If the character is a digit, increment the digit counter.
+• If it is an uppercase letter, increment the uppercase counter.
+• If it is a lowercase letter, increment the lowercase counter.
+5. Split the sentence using split() to count the number of words.
+6. Display all counts.
+7. Stop the program.
+
+Python Program (Source Code):
+# Program to find number of words, digits,
+# uppercase and lowercase letters in a sentence
+# Input from user
+sentence = input("Enter a sentence: ")
+# Initialize counters
+words = len(sentence.split())
+digits = 0
+uppercase = 0
+lowercase = 0
+# Loop through each character
+for ch in sentence:
+ if ch.isdigit():
+   digits += 1
+elif ch.isupper():
+   uppercase += 1
+elif ch.islower():
+   lowercase += 1
+# Display results
+print("Number of words:", words)
+print("Number of digits:", digits)
+print("Number of uppercase letters:", uppercase)
+print("Number of lowercase letters:", lowercase)
+
+Output:
+Number of words: 3
+Number of digits: 3
+Number of uppercase letters: 1
+Number of lowercase letters: 9
+
+Result:
+Thus, the Python program that accepts a sentence and finds the number of words, digits, uppercase letters, and lowercase
+letters was successfully written, executed, and verified.
