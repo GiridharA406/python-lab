@@ -1,0 +1,74 @@
+Experiment No: 11
+Date: 15/10/2025
+
+Title:
+ZIP Operation on a Folder — Backup a Folder into a ZIP File
+
+AIM:
+To develop a Python program that creates a ZIP backup of a given folder (located in the current working directory) using
+appropriate standard library modules and methods.
+
+Algorithm:
+1. Start the program.
+2. Import required modules: os, shutil, datetime (optional for timestamp).
+3. Accept the folder name from the user.
+4. Verify the folder exists in the current working directory.
+5. Create a destination ZIP file name (e.g., <foldername>_backup.zip or include a timestamp).
+6. Use shutil.make_archive() to create the ZIP file from the folder.
+7. Inform the user about the success and display the path to the created ZIP file.
+8. Handle errors (folder not found, permission errors).
+9. Stop the program.
+
+Python Program (Source Code):
+# Program to backup a folder (in current working directory) into a ZIP file
+import os
+import shutil
+from datetime import datetime
+def zip_folder(folder_name, add_timestamp=True):
+# Ensure folder exists in current working directory
+cwd = os.getcwd()
+folder_path = os.path.join(cwd, folder_name)
+if not os.path.isdir(folder_path):
+raise FileNotFoundError(f"Folder '{folder_name}' not found in {cwd}")
+# Prepare base name for the archive (without extension)
+if add_timestamp:
+timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+base_name = os.path.join(cwd, f"{folder_name}_backup_{timestamp}")
+else:
+base_name = os.path.join(cwd, f"{folder_name}_backup")
+# shutil.make_archive will add the .zip extension automatically
+archive_path = shutil.make_archive(base_name, 'zip', folder_path)
+return archive_path
+if name == " main ":
+try:
+folder = input("Enter the folder name to backup (in current directory): ").strip()
+# If user presses enter without name, exit
+if not folder:
+print("No folder name entered. Exiting.")
+else:
+zip_path = zip_folder(folder, add_timestamp=True)
+print(f"\nBackup created successfully:\n{zip_path}")
+except FileNotFoundError as fnf:
+print(f"Error: {fnf}")
+
+except PermissionError:
+print("Error: Permission denied. Check folder/file permissions.")
+except Exception as e:
+print(f"An unexpected error occurred: {e}")
+
+How to run in VS Code (quick steps):
+1. Save the code above as zip_backup.py inside the folder where the target folder is located (i.e., the current working
+directory).
+2. Make sure the folder you want to backup is present in that directory, e.g., my_project.
+3. Open the terminal in VS Code (Ctrl + ~) and run:
+4. python zip_backup.py
+5. When prompted, type the folder name (e.g., my_project) and press Enter.
+
+Output (sample run):
+Enter the folder name to backup(in current directory):Testfolder
+Backup created successfully:
+
+Result:
+Thus, the Python program that creates a ZIP backup of a specified folder (from the current working directory) using
+shutil.make_archive() was successfully written, executed, and verified. The ZIP file is created in the same directory and the
+program reports the full path of the created archive.
