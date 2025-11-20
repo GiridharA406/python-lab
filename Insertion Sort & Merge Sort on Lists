@@ -1,0 +1,79 @@
+ExperimentNo.:07
+Date: 24/09/2025
+
+Title:
+Insertion Sort & Merge Sort on Lists
+
+AIM:
+To write a Python program to implement insertion sort and merge sort using lists.
+
+Algorithm:
+Insertion Sort Algorithm:
+1. Start the program.
+2. Initialize a list with elements.
+3. Take one element from the unsorted portion and place it at its correct position in the sorted portion.
+4. Repeat the process until all elements are sorted.
+5. Display the sorted list.
+
+Merge Sort Algorithm:
+1. Start the program.
+2. Divide the list into two halves recursively.
+3. Sort each half using merge sort.
+4. Merge the two sorted halves into a single sorted list.
+5. Display the sorted list.
+6. Stop the program.
+
+Python Program (Source Code):
+# Program to implement Insertion Sort and Merge Sort using lists
+# Function for Insertion Sort
+def insertion_sort(arr):
+ for i in range(1, len(arr)):
+  key = arr[i]
+  j = i - 1
+  while j >= 0 and arr[j] > key:
+ arr[j + 1] = arr[j]
+  j -= 1
+ arr[j + 1] = key
+return arr
+# Function for Merge Sort
+def merge_sort(arr):
+ if len(arr) > 1:
+   mid = len(arr) // 2
+   left = arr[:mid]
+   right = arr[mid:]
+   merge_sort(left)
+   merge_sort(right)
+   i = j = k = 0
+  while i < len(left) and j < len(right):
+   if left[i] < right[j]:
+    arr[k] = left[i]
+    i += 1
+ else:
+    arr[k] = right[j]
+    j += 1
+   k += 1
+
+while i < len(left):
+ arr[k] = left[i]
+ i += 1
+ k += 1
+while j < len(right):
+ arr[k] = right[j]
+ j += 1
+ k += 1
+return arr
+# Main program
+arr = [int(x) for x in input("Enter numbers separated by space: ").split()]
+print("Original List:", arr)
+print("After Insertion Sort:", insertion_sort(arr.copy()))
+print("After Merge Sort:", merge_sort(arr.copy()))
+
+Output:
+Enter numbers separated by space: 23 5 56 9 5 9
+Original list:[23,5,56,9,5,9]
+After intertion sort: [5,5,9,9,23,56]
+After merge sort:[5,5,9,9,23,56]
+
+Result:
+Thus, the Python program to implement insertion sort and merge sort using lists was successfully written, executed, and
+verified.
