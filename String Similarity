@@ -1,0 +1,47 @@
+Experiment No.: 06
+Date: 24/09/2025
+
+Title:
+String Similarity
+
+AIM:
+To write a Python program to find the string similarity between two given strings.
+
+Algorithm:
+1. Start the program.
+2. Input two strings from the user.
+3. Compare the characters of both strings at the same position.
+4. Count the number of matching characters.
+5. Find the total length of the longer string.
+6. Calculate the similarity percentage using the formula:
+Similarity (%) = (Number of matches / Length of longer string) × 100
+7. Display the similarity percentage.
+8. Stop the program.
+
+Python Program (Source Code):
+# Program to find the string similarity between two strings
+# Input from user
+str1 = input("Enter the first string: ")
+str2 = input("Enter the second string: ")
+# Find minimum and maximum lengths
+min_len = min(len(str1), len(str2))
+max_len = max(len(str1), len(str2))
+# Count matching characters
+matches = 0
+for i in range(min_len):
+ if str1[i] == str2[i]:
+   matches += 1
+# Calculate similarity percentage
+similarity = (matches / max_len) * 100
+# Display result
+print("Number of matching characters:", matches)
+print("String Similarity: {:.2f}%".format(similarity))
+
+Output:
+Enter the first string: godhasri
+Enter the second string:GODHASRI
+Number of matching characters:5
+
+Result:
+Thus, the Python program to find the string similarity between two given strings was successfully written, executed, and
+verified.
